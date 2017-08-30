@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-8483110048710044",
+        enable_page_level_ads: true
+        });
+      </script>
+
+        <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAF9DOghSXDQqCptcRxrbb1BifRAm77aqo",
+            authDomain: "flood-app-bb6ee.firebaseapp.com",
+            databaseURL: "https://flood-app-bb6ee.firebaseio.com",
+            projectId: "flood-app-bb6ee",
+            storageBucket: "",
+            messagingSenderId: "543807546921"
+          };
+          firebase.initializeApp(config);
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <!-- Jquery File Link -->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <!--Css Styles-->
+        <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+        <!--Material Icons-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Concert+One|Fredoka+One" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+        <!-- Geolocator Api -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/geolocator/2.1.1/geolocator.js"></script>
+
+        <!--Title-->
+        <title>Flood Alert</title>
+
+    </head>
+    <body>
+        <div class="navbar">
+          <div class="left-navbar">
+            <img src="Images/water-drop.svg"></img>
+            <div>Flood Alert</div>
+          </div>
+          <div id="SignInButton"> <i class="material-icons md-36">account_circle</i> Sign In With Google </div>
+          <div id="Profile-Info">
+            <div id="SignOut"> Sign Out</div>
+            <div id="Profile-Info-Name"></div>
+            <div id="Profile-Info-Pic"></div>
+          </div>
+        </div>
+
+        <div id="map"></div>
+
+        <div class="dropdown">
+          <button class="dropbtn"><img src="Images/water-drop.svg"></button>
+          <div class="dropdown-content">
+            <div onclick="createMarker.light()"><img src="Images/water-drop-3.svg">0-6 Inches of Rain</div>
+            <div onclick="createMarker.medium()"><img src="Images/water-drop-2.svg">6-12 Inches of Rain</div>
+            <div onclick="createMarker.heavy()"><img src="Images/water-drop-1.svg">+12 Inches of Rain</div>
+          </div>
+        </div>
+
+        <div id="SearchBar">
+          <input id="SearchBarInput" placeholder="Enter your Address">
+          <div id="submit" onclick="searchBarGeocode()"> <i class="material-icons md-24">trending_flat</i> </div >
+        </div>
+
+        <div id='description'>
+          Hello, Everyone! This is a Website which lets you inform other users in the community of flooded location. This is Version 0.5.
+          <button onclick="displayMarker.light()">light</button>
+          <button onclick="displayMarker.medium()">Medium</button>
+          <button onclick="displayMarker.heavy()">Heavy</button>
+        </div>
+
+
+        <div class="testInfo">
+          <div class="testInfo-content">
+            <div class="testInfo-content-title">
+              <div class="testInfo-title">Submit A Location</div>
+              <div class="testInfo-content-exit"></div>
+            </div>
+            <div class="testInfo-content-left">
+              <div class="testInfo-content-location" id="testInfo-content-map"></div>
+            </div>
+            <div class="testInfo-content-right">
+              <textarea class="testInfo-content-comment" id="testInfo-content-comment"></textarea>
+              <div class="testInfo-content-person">
+                <div id="testInfo-content-person-Name"></div>
+                <div id="testInfo-content-person-Pic"></div>
+              </div>
+              <div class="testInfo-content-submit"><p>Submit</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="testInfo">
+          <div class="testInfo-content">
+            <div class="testInfo-content-title">
+              <div class="testInfo-title">About this Pin!</div>
+              <div class="testInfo-content-exit"></div>
+            </div>
+            <div class="testInfo-content-left">
+              <div class="testInfo-content-location" id="testInfo-content-display-map"></div>
+            </div>
+            <div class="testInfo-content-right">
+              <div class="testInfo-content-comment" id="displayInfo-content-comment"></div>
+              <div id="testInfo-content-person">
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </body>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF9DOghSXDQqCptcRxrbb1BifRAm77aqo&callback=initMap"></script>
+    <script type="text/javascript" src="js/firebase.js"></script>
+
+</html>
