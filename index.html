@@ -8,10 +8,9 @@
         enable_page_level_ads: true
         });
       </script>
-
+        <!-- Firebase API -->
         <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
         <script>
-          // Initialize Firebase
           var config = {
             apiKey: "AIzaSyAF9DOghSXDQqCptcRxrbb1BifRAm77aqo",
             authDomain: "flood-app-bb6ee.firebaseapp.com",
@@ -22,12 +21,24 @@
           };
           firebase.initializeApp(config);
         </script>
+
+        <!-- Geolocator Api -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/geolocator/2.1.1/geolocator.js"></script>
+        <script>
+          geolocator.config({
+            language: "en",
+            google: {
+              version: "3",
+              key: "AIzaSyAF9DOghSXDQqCptcRxrbb1BifRAm77aqo"
+            }
+          });
+        </script>
+
         <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE" crossorigin="anonymous"></script>
+
+
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
-        <!-- Jquery File Link -->
-        <script type="text/javascript" src="js/jquery.js"></script>
         <!--Css Styles-->
         <link rel="stylesheet" href="css/styles.css" type="text/css"/>
         <!--Material Icons-->
@@ -35,8 +46,7 @@
         <!--Google Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Concert+One|Fredoka+One" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-        <!-- Geolocator Api -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/geolocator/2.1.1/geolocator.js"></script>
+
 
         <!--Title-->
         <title>Flood Alert</title>
@@ -119,7 +129,10 @@
 
     </body>
 
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF9DOghSXDQqCptcRxrbb1BifRAm77aqo&callback=initMap"></script>
-    <script type="text/javascript" src="js/firebase.js"></script>
+
+
 
 </html>
